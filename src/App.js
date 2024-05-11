@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Page from "./layout/Page";
 
 function App() {
+  const filters = [
+    {
+      id: "jobRole",
+      name: "Position",
+      options: [
+        { value: "frontend", label: "Frontend" },
+        { value: "ios", label: "iOS" },
+        { value: "android", label: "Android" },
+        { value: "tech lead", label: "Tech Lead" },
+        { value: "backend", label: "Backend" },
+      ],
+    },
+    {
+      id: "location",
+      name: "Location",
+      options: [
+        { value: "remote", label: "Remote" },
+        { value: "mumbai", label: "Mumbai" },
+        { value: "chennai", label: "Chennai" },
+        { value: "delhi ncr", label: "Delhi NCR" },
+        { value: "bangalore", label: "Bangalore" },
+      ],
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Page filters={filters} />
     </div>
   );
 }
